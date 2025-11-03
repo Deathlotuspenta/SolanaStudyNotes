@@ -1,68 +1,33 @@
-fn main() {
-    // let mut a = 1;
-    // a = 2;
-    // println!("Hello, world!");
-    // println!("a的值:{}",a)
+// 导入随机数包
+use rand::Rng;
+// 导入rand包中的Rng特性（trait）
+// 什么是trait？
+// Rust中没有类这种概念，它是结构体和特性组成，Java中的类和接口
+// 特性相当于Java中的接口，实现特性就是相当于实现接口
+
+// 从标准库（std）里引入 io 模块，用于输入输出操作。
+use std::io;
 
 
+// fn main() {
+//     println!("Start Guess Game！");
+//     let secret_number = rand::thread_rng().gen_range(1..=100);
+//     println!("secret number is {}",secret_number);
 
-    // let a = -1;
-    // println!("{}",a)
+//     println!("Please,Input a number");
 
-    // let resutl = 
-    
-    // i:有符号整型 也就是有负数
-    // u:无符号整型，无负数
+//     let mut user_guess_number = String::new();
+//     // String::new() 创建一个新的空字符串对象  内存：user_guess_number  ─▶  "" （空字符串）
 
-    // println!("{}",function_study(1))
+//     io::stdin().read_line(&mut user_guess_number).expect("读取失败");
+//     // io::stdin()  获取一个标准的输入对象，键盘输入流相当于：Scanner sc = new Scanner(System.in)
+//     // read_line(&mut 变量) 这个是一个方法， 从键盘读取一行输入，并写入变量中，&：传引用 mut 可变引用  “我把变量 user_guess_number 的地址借给你，你可以往里面写数据。”
 
-    ownership_condition_transfered_use();
+//     // .expect("信息") 错误处理
 
-}
-
-
-// fn add(x: i32, y: i32) -> i32	接收两个 i32，返回一个 i32
-// fn say_hello() -> String	不接收参数，返回一个 String
-// fn print_hi() -> ()	返回空值（等价于 void）
-// 箭头代表返回值
-// 以及传入的参数必须声明类型!!!!!必须写！！！！
-
-fn function_study(x:i32)-> i32{
-
-
-
-    return x+1;
-}
-
-// 权限转移 /  所有权
-
-// 所有权可以提高 Rust 性能，避免大部分内存泄漏问题
-
-// Rust中的每一个值都有一个对应的变量作为它的所有者
-
-// 在同一时间内，值有且仅有一个所有者
-
-// 当所有者离开自己的作用域时，它持有的值就会被释放掉  
-
-// String::from : 用于创建有一块所有权的内存
-
-
-fn ownership_condition1(){
-    let a = String::from("a");
-    println!("{}",a)
-} // 这里a就会消失  没有人所有
-
-
-// fn ownership_condition2(){
-//     let a = String::from("a");
-//     let b = a;
-//     println!("{}",a) // 报错，无法使用a 因为a的值1 已经属于了b
+//     println!("Your guess number is {}",user_guess_number);
 // }
 
-// 如何使用已经转移所有权的 变量？
-
-fn ownership_condition_transfered_use() -> (){
-    let a = String::from("ab使用转移所有权的变量");
-    let b = a.clone(); // 使用深拷贝
-    println!("{}",b)
+fn main(){
+    
 }
